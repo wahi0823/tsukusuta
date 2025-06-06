@@ -175,6 +175,53 @@
     <!-- クレジットここまで -->
   </footer>
 
+  <div class="square-rotate-2" id="loading"></div>
+  <style>
+    .square-rotate-2 {
+      --size: 24px;
+      --accent-opacity: .25;
+      --color: currentColor;
+      --animation-timing-function: linear;
+      --animation-duration: 2s;
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+    }
+
+    .square-rotate-2::before,
+    .square-rotate-2::after {
+      content: '';
+      position: absolute;
+      transform: rotate(0deg);
+      animation: var(--animation-timing-function) var(--animation-duration) infinite square-rotate-2-animation;
+    }
+
+    .square-rotate-2::before {
+      inset: 0;
+      background-color: var(--color);
+      opacity: var(--accent-opacity);
+    }
+
+    .square-rotate-2::after {
+      top: 12.5%;
+      left: 12.5%;
+      width: 75%;
+      height: 75%;
+      background-color: var(--color);
+      animation-direction: reverse;
+    }
+
+    @keyframes square-rotate-2-animation {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
   <!--JavaScrip 読込-->
   <script src="js/common.js" type="text/javascript"></script>
 </body>

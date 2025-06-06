@@ -85,3 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+const loading = document.getElementById('loading');
+window.onload = function() {
+  loading.classList.add('loaded');
+  setTimeout(() => {
+    loading.style.display = 'none';
+  }, 500); // アニメーションの時間に合わせて調整
+}

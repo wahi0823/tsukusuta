@@ -1003,3 +1003,15 @@ footer {
     padding: 14px;
   }
 }
+
+#loading {
+  display: grid;
+  place-items: center;
+  background-color: black;
+  
+}
+
+#loading.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
